@@ -39,7 +39,7 @@ export default function Founder() {
             <div className="space-y-4 text-gray-400 text-base leading-relaxed">
               <div className="glass-card p-4 border-l-4 border-gold">
                 <p className="italic text-lg text-gold font-semibold">
-                  "When you join The Trucking Vault, you become family..."
+                  &ldquo;When you join The Trucking Vault, you become family...&rdquo;
                 </p>
               </div>
               
@@ -49,13 +49,13 @@ export default function Founder() {
               </p>
 
               <p>
-                I've been where you are—starting from scratch, learning the ropes, and building a 
-                successful career in trucking. That's why I'm committed to giving you the tools, 
+                I&apos;ve been where you are—starting from scratch, learning the ropes, and building a 
+                successful career in trucking. That&apos;s why I&apos;m committed to giving you the tools, 
                 knowledge, and confidence you need to thrive in this industry.
               </p>
 
               <p>
-                At The Trucking Vault, we don't just train you for a license—we prepare you for a 
+                At The Trucking Vault, we don&apos;t just train you for a license—we prepare you for a 
                 rewarding career. Our personalized approach ensures that every student gets the 
                 attention and guidance they deserve.
               </p>
