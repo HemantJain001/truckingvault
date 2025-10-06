@@ -49,9 +49,18 @@ export default function Programs() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading">
             Our <span className="gradient-text">Programs</span>
           </h2>
-          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-6">
             Comprehensive training programs designed to help you succeed in the trucking industry
           </p>
+          <Link 
+            href="/courses"
+            className="inline-flex items-center text-gold hover:text-gold-light font-semibold text-sm transition-colors duration-300"
+          >
+            View All Courses
+            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
         </div>
 
         {/* Programs Grid */}

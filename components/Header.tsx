@@ -18,10 +18,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Programs", href: "#programs" },
-    { name: "Dispatch", href: "#dispatch" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Courses", href: "/courses" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -29,10 +28,10 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 px-6 pt-6">
       {/* Floating Glass Navbar */}
       <div
-        className={`max-w-7xl mx-auto transition-all duration-300 ${
+        className={`mx-auto transition-all duration-300 glass rounded-full shadow-glass py-2 ${
           isScrolled
-            ? "glass rounded-3xl shadow-subtle py-3 px-6"
-            : "glass rounded-3xl shadow-glass py-4 px-8"
+            ? "max-w-6xl px-6"
+            : "max-w-7xl px-8"
         }`}
       >
         <div className="flex items-center justify-between">
@@ -65,12 +64,12 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Enroll Button */}
+          {/* Get Started Button */}
           <Link
-            href="#enroll"
+            href="/courses"
             className="hidden lg:block btn-primary"
           >
-            Enroll Now
+            Get Started
           </Link>
 
           {/* Mobile Menu Button */}

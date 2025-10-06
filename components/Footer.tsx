@@ -1,34 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Programs", href: "#programs" },
-    { name: "CDL Classes", href: "#classes" },
-    { name: "Dispatch Training", href: "#dispatch" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Courses", href: "/courses" },
     { name: "Contact", href: "#contact" },
   ];
 
   const programs = [
-    { name: "ELDT Theory", href: "#programs" },
-    { name: "Class A CDL", href: "#classes" },
-    { name: "Class B CDL", href: "#classes" },
-    { name: "CDL Endorsements", href: "#classes" },
-    { name: "Freight Dispatching", href: "#dispatch" },
-    { name: "Business Setup", href: "#dispatch" },
+    { name: "Class A CDL", href: "/courses" },
+    { name: "Class B CDL", href: "/courses" },
+    { name: "CDL Endorsements", href: "/courses" },
+    { name: "CDL Upgrades", href: "/courses" },
+    { name: "Freight Dispatching", href: "/courses" },
+    { name: "Trucking Business", href: "/courses" },
   ];
 
+  const whatsappNumber = "1234567890";
+  const whatsappMessage = encodeURIComponent("Hi! I'd like to know more about The Trucking Vault's CDL training programs.");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
   const socialLinks = [
-    { icon: <FaFacebookF />, href: "#", label: "Facebook" },
-    { icon: <FaTwitter />, href: "#", label: "Twitter" },
-    { icon: <FaInstagram />, href: "#", label: "Instagram" },
-    { icon: <FaLinkedinIn />, href: "#", label: "LinkedIn" },
+    { icon: <FaWhatsapp />, href: whatsappLink, label: "WhatsApp", external: true },
+    { icon: <FaFacebookF />, href: "#", label: "Facebook", external: true },
+    { icon: <FaInstagram />, href: "#", label: "Instagram", external: true },
+    { icon: <FaLinkedinIn />, href: "#", label: "LinkedIn", external: true },
   ];
 
   return (
@@ -50,8 +52,10 @@ export default function Footer() {
                 <a
                   key={index}
                   href={social.href}
+                  target={social.external ? "_blank" : undefined}
+                  rel={social.external ? "noopener noreferrer" : undefined}
                   aria-label={social.label}
-                  className="glass w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-gold hover:text-dark text-gold border border-gold/20 hover:shadow-glow"
+                  className="glass w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-gold hover:text-dark text-gold border border-gold/20 hover:shadow-subtle"
                 >
                   {social.icon}
                 </a>
@@ -101,10 +105,21 @@ export default function Footer() {
             <ul className="space-y-5">
               <li className="flex items-start gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center group-hover:bg-gold group-hover:text-dark transition-all duration-300">
+                  <FaWhatsapp className="text-gold group-hover:text-dark" />
+                </div>
+                <div>
+                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-gold transition-colors">
+                    Message on WhatsApp
+                  </a>
+                  <p className="text-sm text-gray-500">Quick Response</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-4 group">
+                <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center group-hover:bg-gold group-hover:text-dark transition-all duration-300">
                   <FaPhone className="text-gold group-hover:text-dark" />
                 </div>
                 <div>
-                  <p className="text-gray-300 group-hover:text-gold transition-colors">(555) 123-4567</p>
+                  <a href="tel:+15551234567" className="text-gray-300 hover:text-gold transition-colors">(555) 123-4567</a>
                   <p className="text-sm text-gray-500">Mon-Fri 8am-6pm</p>
                 </div>
               </li>
