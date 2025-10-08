@@ -256,7 +256,7 @@ Message: ${formData.message}`;
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-black/30 border border-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold transition-colors resize-none"
-                    placeholder="Tell us about your CDL training goals and any questions you have..."
+                    placeholder="Tell us about your CDL training goals and any questions you have&#39;..."
                   />
                 </div>
 
@@ -385,7 +385,7 @@ Message: ${formData.message}`;
             </div>
             
             <div className="glass rounded-2xl p-6">
-              <h4 className="text-xl font-bold text-white mb-3">What's included in the training?</h4>
+              <h4 className="text-xl font-bold text-white mb-3">What&#39;s included in the training?</h4>
               <p className="text-gray-300">
                 All training includes classroom instruction, hands-on vehicle operation, 
                 test preparation, and job placement assistance.
