@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function Hero() {
+  useScrollAnimation();
+
   return (
     <section id="home" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-32 pb-12">
       {/* Animated Background */}
@@ -19,28 +22,28 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         {/* Badge */}
-        <div className="inline-flex items-center glass rounded-full px-6 py-3 mb-8 animate-fade-in-up border border-gold/30">
+        <div className="inline-flex items-center glass rounded-full px-6 py-3 mb-8 animate-fadeInUp border border-gold/30">
           <span className="w-2 h-2 bg-gold rounded-full mr-3 animate-pulse"></span>
           <span className="text-gold font-semibold text-sm">FMCSA-Certified Training</span>
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up font-heading" style={{ animationDelay: "0.1s" }}>
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fadeInUp font-heading" style={{ animationDelay: "0.1s" }}>
           Launch Your Trucking Career with<br />
           <span className="gradient-text">The Trucking Vault</span>
         </h1>
 
         {/* Tagline/Subheading */}
-        <p className="text-base md:text-lg lg:text-xl mb-3 text-gold max-w-3xl mx-auto animate-fade-in-up leading-relaxed font-semibold" style={{ animationDelay: "0.15s" }}>
+        <p className="text-base md:text-lg lg:text-xl mb-3 text-gold max-w-3xl mx-auto animate-fadeInUp leading-relaxed font-semibold" style={{ animationDelay: "0.15s" }}>
           FMCSA-Certified CDL Training &amp; Business School
         </p>
         
-        <p className="text-base md:text-lg mb-8 text-gray-300 max-w-3xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: "0.2s" }}>
+        <p className="text-base md:text-lg mb-8 text-gray-300 max-w-3xl mx-auto animate-fadeInUp leading-relaxed" style={{ animationDelay: "0.2s" }}>
           From CDL programs to dispatching &amp; business courses — we&apos;ll help you master the road, launch your career, and unlock high-paying opportunities in trucking.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up mb-10" style={{ animationDelay: "0.3s" }}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fadeInUp mb-10" style={{ animationDelay: "0.3s" }}>
           <Link href="/courses" className="btn-primary px-8 py-3">
             Enroll Now
           </Link>
@@ -58,7 +61,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto animate-on-scroll">
           {[
             { number: "500+", label: "Graduates" },
             { number: "95%", label: "Pass Rate" },
@@ -74,9 +77,9 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fadeInUp" style={{ animationDelay: "0.5s" }}>
         <div className="w-6 h-10 border-2 border-gold/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-gold/60 rounded-full"></div>
+          <div className="w-1 h-2 bg-gold/60 rounded-full animate-pulse"></div>
         </div>
       </div>
     </section>

@@ -21,14 +21,14 @@ export default function Header() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Courses", href: "/courses" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-6 pt-6">
       {/* Floating Glass Navbar */}
       <div
-        className={`mx-auto transition-all duration-300 glass rounded-full shadow-glass py-2 ${
+        className={`mx-auto transition-all duration-300 glass rounded-full shadow-glass py-4 ${
           isScrolled
             ? "max-w-6xl px-6"
             : "max-w-7xl px-8"
@@ -81,32 +81,36 @@ export default function Header() {
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pt-4 border-t border-gold/20">
-            <nav className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-300 hover:text-gold transition-colors duration-300 font-medium py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
+      {/* Mobile Menu - Outside the rounded navbar */}
+      {isMobileMenuOpen && (
+        <div className={`lg:hidden mx-auto mt-4 glass rounded-2xl shadow-glass ${
+          isScrolled
+            ? "max-w-6xl px-6"
+            : "max-w-7xl px-8"
+        } py-6`}>
+          <nav className="flex flex-col space-y-4">
+            {navLinks.map((link) => (
               <Link
-                href="#enroll"
-                className="btn-primary text-center mt-2"
+                key={link.name}
+                href={link.href}
+                className="text-gray-300 hover:text-gold transition-colors duration-300 font-medium py-2 text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Enroll Now
+                {link.name}
               </Link>
-            </nav>
-          </div>
-        )}
-      </div>
+            ))}
+            <Link
+              href="/courses"
+              className="btn-primary text-center mt-4"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Get Started
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

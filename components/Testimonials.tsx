@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
@@ -36,6 +37,7 @@ const testimonials = [
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  useScrollAnimation();
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -53,7 +55,7 @@ export default function Testimonials() {
 
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-10 animate-on-scroll">
           <span className="text-gold font-semibold text-xs uppercase tracking-wider mb-3 block">Testimonials</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading">
             Student <span className="gradient-text">Success Stories</span>
@@ -65,7 +67,7 @@ export default function Testimonials() {
 
         {/* Testimonial Carousel */}
         <div className="relative max-w-5xl mx-auto">
-          <div className="glass-card p-6 md:p-10 shadow-subtle animate-fade-in-up">
+          <div className="glass-card p-6 md:p-10 shadow-subtle animate-on-scroll">
             {/* Stars */}
             <div className="flex justify-center mb-5 gap-2">
               {[...Array(testimonials[currentIndex].rating)].map((_, i) => (

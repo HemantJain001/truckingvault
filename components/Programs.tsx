@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaBook, FaTruck, FaHandshake, FaBriefcase } from "react-icons/fa";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const programs = [
   {
@@ -36,6 +37,8 @@ const programs = [
 ];
 
 export default function Programs() {
+  useScrollAnimation();
+  
   return (
     <section id="programs" className="section-padding relative overflow-hidden">
       {/* Background Elements */}
@@ -44,7 +47,7 @@ export default function Programs() {
 
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-10 animate-on-scroll">
           <span className="text-gold font-semibold text-xs uppercase tracking-wider mb-3 block">What We Offer</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading">
             Our <span className="gradient-text">Programs</span>
@@ -68,7 +71,7 @@ export default function Programs() {
           {programs.map((program, index) => (
             <div
               key={index}
-              className="card p-5 flex flex-col group animate-fade-in-up"
+              className="card p-5 flex flex-col group animate-on-scroll"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Icon */}
